@@ -1,9 +1,10 @@
 import "./App.scss";
 import "./trackers";
 import { THEME, TonConnectUIProvider } from "@tonconnect/ui-react";
-import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
+import Credo from "./components/Credo";
 import { TxForm } from "./components/TxForm/TxForm";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   // console.log("ENVS:", import.meta.env.VITE_TEST);
@@ -154,9 +155,10 @@ function App() {
     >
       <div className="app">
         <Header />
-        <TxForm />
+        <Credo />
+        {/*<TxForm />*/}
         {/*<TonProofDemo />*/}
-        <Footer />
+        {/*<Footer />*/}
       </div>
     </TonConnectUIProvider>
   );
