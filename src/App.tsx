@@ -1,15 +1,16 @@
-import './App.scss';
-import './trackers';
-import {THEME, TonConnectUIProvider} from "@tonconnect/ui-react";
-import {Footer} from "./components/Footer/Footer";
-import {Header} from "./components/Header/Header";
-import {TxForm} from "./components/TxForm/TxForm";
+import "./App.scss";
+import "./trackers";
+import { THEME, TonConnectUIProvider } from "@tonconnect/ui-react";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { TxForm } from "./components/TxForm/TxForm";
 
 function App() {
+  // console.log("ENVS:", import.meta.env.VITE_TEST);
   return (
     <TonConnectUIProvider
       manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/tonconnect-manifest.json"
-      uiPreferences={{theme: THEME.DARK}}
+      uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         includeWallets: [
           {
@@ -19,17 +20,18 @@ function App() {
             aboutUrl: "https://wallet.tg/",
             universalLink: "https://t.me/wallet?attach=wallet",
             bridgeUrl: "https://bridge.ton.space/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "tonwallet",
             name: "TON Wallet",
             imageUrl: "https://wallet.ton.org/assets/ui/qr-logo.png",
-            aboutUrl: "https://chrome.google.com/webstore/detail/ton-wallet/nphplpgoakhhjchkkhmiggakijnkhfnd",
+            aboutUrl:
+              "https://chrome.google.com/webstore/detail/ton-wallet/nphplpgoakhhjchkkhmiggakijnkhfnd",
             universalLink: "https://wallet.ton.org/ton-connect",
             jsBridgeKey: "tonwallet",
             bridgeUrl: "https://bridge.tonapi.io/bridge",
-            platforms: ["chrome", "android"]
+            platforms: ["chrome", "android"],
           },
           {
             appName: "nicegramWallet",
@@ -40,7 +42,7 @@ function App() {
             deepLink: "nicegram-tc://",
             jsBridgeKey: "nicegramWallet",
             bridgeUrl: "https://tc.nicegram.app/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "tokenpocket",
@@ -48,16 +50,17 @@ function App() {
             imageUrl: "https://hk.tpstatic.net/logo/tokenpocket.png",
             aboutUrl: "https://tokenpocket.pro",
             jsBridgeKey: "tokenpocket",
-            platforms: ["ios", "android"]
+            platforms: ["ios", "android"],
           },
           {
             appName: "dewallet",
             name: "DeWallet",
-            imageUrl: "https://raw.githubusercontent.com/delab-team/manifests-images/main/WalletAvatar.png",
+            imageUrl:
+              "https://raw.githubusercontent.com/delab-team/manifests-images/main/WalletAvatar.png",
             aboutUrl: "https://delabwallet.com",
             universalLink: "https://t.me/dewallet?attach=wallet",
             bridgeUrl: "https://bridge.dewallet.pro/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "cdcTonWallet",
@@ -68,7 +71,7 @@ function App() {
             deepLink: "dfw://",
             jsBridgeKey: "cdcTonWallet",
             bridgeUrl: "https://wallet.crypto.com/sse/tonbridge",
-            platforms: ["ios", "android", "chrome"]
+            platforms: ["ios", "android", "chrome"],
           },
           {
             appName: "tobi",
@@ -77,7 +80,7 @@ function App() {
             aboutUrl: "https://tobi.fun",
             universalLink: "https://t.me/TobiCopilotBot?attach=wallet",
             bridgeUrl: "https://ton-bridge.tobiwallet.app/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "trustwalletTon",
@@ -86,16 +89,17 @@ function App() {
             aboutUrl: "https://trustwallet.com/about-us",
             bridgeUrl: "https://tonconnect.trustwallet.com/bridge",
             jsBridgeKey: "trustwalletTon",
-            platforms: ["chrome", "ios", "android"]
+            platforms: ["chrome", "ios", "android"],
           },
           {
             appName: "bitgetWalletLite",
             name: "Bitget Wallet Lite",
-            imageUrl: "https://raw.githubusercontent.com/bitgetwallet/download/main/logo/png/bitget_wallet_lite_logo.png",
+            imageUrl:
+              "https://raw.githubusercontent.com/bitgetwallet/download/main/logo/png/bitget_wallet_lite_logo.png",
             aboutUrl: "https://web3.bitget.com",
             universalLink: "https://t.me/BitgetWallet_TGBot?attach=wallet",
             bridgeUrl: "https://ton-connect-bridge.bgwapi.io/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "onekey",
@@ -103,7 +107,7 @@ function App() {
             imageUrl: "https://common.onekey-asset.com/logo/onekey-x288.png",
             aboutUrl: "https://onekey.so",
             jsBridgeKey: "onekeyTonWallet",
-            platforms: ["chrome"]
+            platforms: ["chrome"],
           },
           {
             appName: "tomoWallet",
@@ -112,17 +116,18 @@ function App() {
             aboutUrl: "https://www.tomo.inc/",
             universalLink: "https://t.me/tomowalletbot?attach=wallet",
             bridgeUrl: "https://go-bridge.tomo.inc/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "hpyTonWallet",
             name: "HyperPay Wallet",
             imageUrl: "https://onchain-oss.hyperpay.online/images/logo.png",
             aboutUrl: "https://www.hyperpay.tech",
-            universalLink: "https://www.hyperpay.tech/download&deeplink=hyperpay://web3/wallet/tonconnect",
+            universalLink:
+              "https://www.hyperpay.tech/download&deeplink=hyperpay://web3/wallet/tonconnect",
             jsBridgeKey: "hpyTonWallet",
             bridgeUrl: "https://onchain-wallet.hyperpay.online/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
             appName: "unstoppable",
@@ -131,30 +136,30 @@ function App() {
             aboutUrl: "https://unstoppable.money/",
             universalLink: "https://unstoppable.money/ton-connect",
             bridgeUrl: "https://bridge.unstoppable.money/bridge",
-            platforms: ["ios", "android", "macos", "windows", "linux"]
+            platforms: ["ios", "android", "macos", "windows", "linux"],
           },
           {
-            appName: 'foxwallet',
-            name: 'FoxWallet',
-            imageUrl: 'https://hc.foxwallet.com/img/logo.png',
-            aboutUrl: 'https://foxwallet.com/',
-            jsBridgeKey: 'foxwallet',
-            platforms: ['ios', 'android', 'macos', 'windows', 'linux']
-          }
-        ]
+            appName: "foxwallet",
+            name: "FoxWallet",
+            imageUrl: "https://hc.foxwallet.com/img/logo.png",
+            aboutUrl: "https://foxwallet.com/",
+            jsBridgeKey: "foxwallet",
+            platforms: ["ios", "android", "macos", "windows", "linux"],
+          },
+        ],
       }}
       actionsConfiguration={{
-        twaReturnUrl: 'https://t.me/tc_twa_demo_bot/start'
+        twaReturnUrl: "https://t.me/tc_twa_demo_bot/start",
       }}
     >
       <div className="app">
-        <Header/>
-        <TxForm/>
+        <Header />
+        <TxForm />
         {/*<TonProofDemo />*/}
-        <Footer/>
+        <Footer />
       </div>
     </TonConnectUIProvider>
-  )
+  );
 }
 
-export default App
+export default App;
