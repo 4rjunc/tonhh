@@ -1,3 +1,5 @@
+# CREDO
+
 # Demo dApp with @tonconnect/ui-react
 
 This Demo dApp showcases the integration with @tonconnect/ui-react. Experience it live at [Demo dApp with Wallet](https://ton-connect.github.io/demo-dapp-with-wallet/).
@@ -5,6 +7,7 @@ This Demo dApp showcases the integration with @tonconnect/ui-react. Experience i
 ## Learn More About Ton Connect
 
 To understand more about Ton Connect and how it enables blockchain functionalities in your applications, refer to the following resources:
+
 - Ton Connect Documentation: [https://docs.ton.org/develop/dapps/ton-connect/](https://docs.ton.org/develop/dapps/ton-connect/)
 - Ton Connect SDK and UI Library on GitHub: [https://github.com/ton-connect/sdk/tree/main/packages/ui](https://github.com/ton-connect/sdk/tree/main/packages/ui)
 
@@ -47,7 +50,6 @@ LocalTunnel Documentation: [https://localtunnel.github.io/www/](https://localtun
 5. Select your bot from the list.
 6. Provide all the required information for your Mini App.
 
-
 ### Returning to the Application (Optional)
 
 To return to the application after interacting with the wallet, you must specify a `twaReturnUrl` in `src/App.tsx`.
@@ -60,17 +62,17 @@ Here is a sample configuration for specifying a return URL:
 
 ```jsx
 <TonConnectUIProvider
-    manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/tonconnect-manifest.json"
-    uiPreferences={{ theme: THEME.DARK }}
-    actionsConfiguration={{
-        twaReturnUrl: 'https://t.me/WebAppWalletBot/myapp'
-    }}
+  manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/tonconnect-manifest.json"
+  uiPreferences={{ theme: THEME.DARK }}
+  actionsConfiguration={{
+    twaReturnUrl: "https://t.me/WebAppWalletBot/myapp",
+  }}
 ></TonConnectUIProvider>
 ```
 
 ### Adding a Custom Wallet (Optional)
 
-To integrate a custom wallet into your application, adjust the `walletsListConfiguration` in `src/App.tsx`. Include your wallet details in `includeWallets` and specify `universalLink`. 
+To integrate a custom wallet into your application, adjust the `walletsListConfiguration` in `src/App.tsx`. Include your wallet details in `includeWallets` and specify `universalLink`.
 
 Here's a concise guide:
 
@@ -80,24 +82,24 @@ Here is a sample configuration for adding a custom wallet:
 
 ```jsx
 <TonConnectUIProvider
-    manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/tonconnect-manifest.json"
-    uiPreferences={{ theme: THEME.DARK }}
-    walletsListConfiguration={{
-        includeWallets: [
-            {
-                appName: "telegram-wallet",
-                name: "Wallet",
-                imageUrl: "https://wallet.tg/images/logo-288.png",
-                aboutUrl: "https://wallet.tg/",
-                universalLink: "https://t.me/wallet/start",
-                bridgeUrl: "https://bridge.tonapi.io/bridge",
-                platforms: ["ios", "android", "macos", "windows", "linux"]
-            }
-        ]
-    }}
-    actionsConfiguration={{
-        twaReturnUrl: 'https://t.me/WebAppWalletBot/myapp'
-    }}
+  manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/tonconnect-manifest.json"
+  uiPreferences={{ theme: THEME.DARK }}
+  walletsListConfiguration={{
+    includeWallets: [
+      {
+        appName: "telegram-wallet",
+        name: "Wallet",
+        imageUrl: "https://wallet.tg/images/logo-288.png",
+        aboutUrl: "https://wallet.tg/",
+        universalLink: "https://t.me/wallet/start",
+        bridgeUrl: "https://bridge.tonapi.io/bridge",
+        platforms: ["ios", "android", "macos", "windows", "linux"],
+      },
+    ],
+  }}
+  actionsConfiguration={{
+    twaReturnUrl: "https://t.me/WebAppWalletBot/myapp",
+  }}
 ></TonConnectUIProvider>
 ```
 
