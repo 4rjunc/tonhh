@@ -20,6 +20,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+#Allow repo secrets
+env:
+  VITE_RECLAIM_APP_ID: ${{ secrets.VITE_RECLAIM_APP_ID }}
+  VITE_RECLAIM_APP_SECRET: ${{ secrets.VITE_RECLAIM_APP_SECRET }}
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -34,7 +39,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "npm"
+          cache: "yarn"
           cache-dependency-path: "./"
       - name: Install dependencies
         run: yarn install

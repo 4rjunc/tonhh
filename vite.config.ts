@@ -1,19 +1,12 @@
-import basicSsl from "@vitejs/plugin-basic-ssl";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import basicSsl from "@vitejs/plugin-basic-ssl";
 
-// https://vitejs.dev/config/
-
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), basicSsl()],
   build: {
     outDir: "./docs",
   },
-  // @ts-ignore
-  base: process.env.GH_PAGES ? "/demo-dapp-with-wallet/" : "./",
-  server: {
-    fs: {
-      allow: ["../sdk", "./"],
-    },
-  },
+  base: "./",
 });
