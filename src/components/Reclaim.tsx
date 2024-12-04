@@ -261,61 +261,58 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
             value={requestUrl}
             className="w-full p-3 border border-gray-200 rounded-lg bg-white text-sm font-mono text-gray-900"
           />
+          <div className="mt-4">
+            {/* Share Link Title */}
+            <span className="text-sm font-medium text-gray-600 mb-2 block">
+              Share Link On
+            </span>
+
+            <div className="flex items-center w-full" style={{ gap: "10px" }}>
+              {/* WhatsApp Share Button */}
+              <a
+                href={`https://wa.me/?text=${encodeURIComponent(
+                  `Verify your social media account using this link: ${requestUrl}`,
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 transition-colors"
+                style={{ padding: "3px 6px" }}
+              >
+                <FaWhatsapp className="mr-2" />
+                WhatsApp
+              </a>
+
+              {/* Telegram Share Button */}
+              <a
+                href={`https://t.me/share/url?url=${encodeURIComponent(requestUrl)}&text=${encodeURIComponent(
+                  "Verify your social media account using this link!",
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium  bg-blue-500 rounded-lg hover:bg-blue-600 transition-colors"
+                style={{ padding: "3px 6px" }}
+              >
+                <FaTelegram className="mr-2" />
+                Telegram
+              </a>
+            </div>
+          </div>
         </div>
       )}
-      <div className="mt-4">
-        {/* Share Link Title */}
-        <span className="text-sm font-medium text-gray-600 mb-2 block">
-          Share Link On
-        </span>
-
-        <div className="flex items-center w-full" style={{ gap: "10px" }}>
-          {/* WhatsApp Share Button */}
-          <a
-            href={`https://wa.me/?text=${encodeURIComponent(
-              `Verify your social media account using this link: ${requestUrl}`,
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 transition-colors"
-            style={{ padding: "3px 6px" }}
-          >
-            <FaWhatsapp className="mr-2" />
-            WhatsApp
-          </a>
-
-          {/* Telegram Share Button */}
-          <a
-            href={`https://t.me/share/url?url=${encodeURIComponent(requestUrl)}&text=${encodeURIComponent(
-              "Verify your social media account using this link!",
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-3 py-2 text-sm font-medium  bg-blue-500 rounded-lg hover:bg-blue-600 transition-colors"
-            style={{ padding: "3px 6px" }}
-          >
-            <FaTelegram className="mr-2" />
-            Telegram
-          </a>
+      {/* Success State */}
+      {verified && (
+        <div className="mt-6 flex items-center gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
+          <CheckCircle className="w-6 h-6 text-green-600" />
+          <div>
+            <h3 className="font-medium text-green-900">
+              Verification Complete
+            </h3>
+            <p className="text-sm text-green-700">
+              Social media account verified successfully
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-{
-  /* Success State */
-}
-{
-  verified && (
-    <div className="mt-6 flex items-center gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
-      <CheckCircle className="w-6 h-6 text-green-600" />
-      <div>
-        <h3 className="font-medium text-green-900">Verification Complete</h3>
-        <p className="text-sm text-green-700">
-          Social media account verified successfully
-        </p>
-      </div>
+      )}
     </div>
   );
 }
