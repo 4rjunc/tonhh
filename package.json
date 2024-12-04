@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@reclaimprotocol/js-sdk": "^2.1.1",
-    "@tonconnect/ui-react": "2.0.10-beta.1",
+    "@tonconnect/ui-react": "^2.0.9",
     "@vitejs/plugin-basic-ssl": "^1.2.0",
     "eruda": "^2.11.2",
     "lucide-react": "^0.464.0",

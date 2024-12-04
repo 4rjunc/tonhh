@@ -136,15 +136,27 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
   }, [proofs, profileLink]);
 
   return (
-    <div className="max-w-2xl  p-6 bg-white border border-gray-200 rounded-lg shadow mx-auto">
+    <div className="max-w-2xl p-6 bg-gradient-to-r from-indigo-100 via-purple-100 to-indigo-200 rounded-lg shadow-lg mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-center mb-6">
         <div className="text-center mt-8">
-          <h5 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 tracking-wider mb-6 shadow-md">
-            Social Verification
+          <h5 style={{
+            fontSize: "1.5rem", 
+            fontWeight: "700", 
+            color: "transparent", 
+            background: "linear-gradient(to right, #3b82f6, #2563eb, #1d4ed8)", 
+            WebkitBackgroundClip: "text", 
+            display: "inline-block", 
+            letterSpacing: "0.1em", 
+            textAlign: "center",
+            marginBottom: "16px",
+          }}>
+            Create Your Credo ID
           </h5>
         </div>
       </div>
+
+
       {/* Profile Link Input */}
       {/* <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -254,43 +266,18 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
           />
 
           {/* Share Buttons */}
-
           <div className="mt-4">
-            {/* Share Link Title */}
-            <span className="text-sm font-medium text-gray-600 mb-2 block">
-              Share Link On
-            </span>
-
-            <div className="flex items-center w-full" style={{ gap: "10px" }}>
-              {/* WhatsApp Share Button */}
-              <a
-                href={`https://wa.me/?text=${encodeURIComponent(
-                  `Verify your social media account using this link: ${requestUrl}`,
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 transition-colors"
-                style={{ padding: "3px 6px" }}
-              >
-                <FaWhatsapp className="mr-2" />
-                WhatsApp
-              </a>
-
-              {/* Telegram Share Button */}
-              <a
-                href={`https://t.me/share/url?url=${encodeURIComponent(requestUrl)}&text=${encodeURIComponent(
-                  "Verify your social media account using this link!",
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-3 py-2 text-sm font-medium  bg-blue-500 rounded-lg hover:bg-blue-600 transition-colors"
-                style={{ padding: "3px 6px" }}
-              >
-                <FaTelegram className="mr-2" />
-                Telegram
-              </a>
-            </div>
+            <a 
+              href={requestUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center block"
+            >
+              Open URL
+            </a>
           </div>
+
+
         </div>
       )}
       {/* Success State */}
