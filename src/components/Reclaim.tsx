@@ -25,8 +25,8 @@ interface SocialMedia {
 //   import.meta.env.VITE_PUBLIC_RECLAIM_APP_SECRET,
 // );
 
-const APP_ID = import.meta.env.VITE_PUBLIC_RECLAIM_APP_ID;
-const APP_SECRET = import.meta.env.VITE_PUBLIC_RECLAIM_APP_SECRET;
+const APP_ID = import.meta.env.VITE_RECLAIM_APP_ID;
+const APP_SECRET = import.meta.env.VITE_RECLAIM_SECRET_ID;
 
 const getAPPID = (social: string) => {
   const ids = {
@@ -63,6 +63,7 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
   };
 
   const setup = async () => {
+    console.log("setup")
     try {
       setIsLoading(true);
       const PROVIDER_ID = getAPPID(social);
@@ -73,6 +74,7 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       }
 
       setStatus("Initializing verification...");
+      console.log("verfication init", APP_ID, APP_SECRET)
       const reclaimProofRequest = await ReclaimProofRequest.init(
         APP_ID,
         APP_SECRET,
