@@ -1,0 +1,22 @@
+{
+  "identifier": "0x6ffeaca683e4d985b773bbe9622493064a7cacea798a07f9f77c402b0644f166",
+  "claimData": {
+    "provider": "http",
+    "parameters": "{\"additionalClientOptions\":{},\"body\":\"\",\"geoLocation\":\"\",\"headers\":{\"Referer\":\"https://github.com/settings/profile\",\"Sec-Fetch-Mode\":\"same-origin\",\"User-Agent\":\"Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.69 Mobile Safari/537.36\"},\"method\":\"GET\",\"paramValues\":{\"username\":\"4rjunc\"},\"responseMatches\":[{\"invert\":false,\"type\":\"contains\",\"value\":\"<span class=\\\"color-fg-muted\\\">({{username}})</span>\"}],\"responseRedactions\":[{\"jsonPath\":\"\",\"regex\":\"<span\\\\ class=\\\"color\\\\-fg\\\\-muted\\\">\\\\((.*)\\\\)</span>\",\"xPath\":\"\"}],\"url\":\"https://github.com/settings/profile\"}",
+    "owner": "0x9635afe5abf0388fe9e112eda6de76942b44e90e",
+    "timestampS": 1733329756,
+    "context": "{\"contextAddress\":\"0x0\",\"contextMessage\":\"sample context\",\"extractedParameters\":{\"username\":\"4rjunc\"},\"providerHash\":\"0x74734677e529e5d823b3a2845799a908ab59d2afa9ac168c6fd5d57d1b0e319f\"}",
+    "identifier": "0x6ffeaca683e4d985b773bbe9622493064a7cacea798a07f9f77c402b0644f166",
+    "epoch": 1
+  },
+  "signatures": [
+    "0xaf453537704ab50f9a272a03384bf12fa543095bb5ade48974d92a66ebc405587f296344cda77e0d0a7ae76e1ee6b835618d6618eebc45ff2b11d95e0ec0d5491b"
+  ],
+  "witnesses": [
+    {
+      "id": "0x244897572368eadf65bfbc5aec98d8e5443a9072",
+      "url": "wss://witness.reclaimprotocol.org/ws"
+    }
+  ],
+  "publicData": {}
+}

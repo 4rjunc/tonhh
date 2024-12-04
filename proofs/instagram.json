@@ -1,0 +1,22 @@
+{
+  "identifier": "0xe125afe9135f80b00071509fa26e52314e6a84ae5cb40c0f2d563e7d840daa85",
+  "claimData": {
+    "provider": "http",
+    "parameters": "{\"additionalClientOptions\":{},\"body\":\"{{REQ_BODY_GRD}}\",\"geoLocation\":\"\",\"headers\":{\"Referer\":\"https://www.instagram.com/\",\"Sec-Fetch-Mode\":\"same-origin\",\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Safari/604.1\"},\"method\":\"POST\",\"paramValues\":{\"REQ_BODY_GRD\":\"av=17841419780876685&__d=www&__user=0&__a=1&__req=r&__hs=20061.HYP%3Ainstagram_web_pkg.2.1..0.1&dpr=3&__ccg=GOOD&__rev=1018609262&__s=2hhzmm%3Aq5wrt9%3A3wblce&__hsi=7444592858818156004&__dyn=7xeUjG1mxu1syUbFp41twpUnwgU7SbzEdF8aUco2qwJxS0k24o1DU2_CwjE1EE2Cw8G11wBz81s8hwGxu786a3a1YwBgao6C0Mo2iyo7u3ifK0EUjwGzEaE2iwNwmE2eUlwhEe87q0nK3qazo7u3C2u2J0bS1LwTwKG1pg2fwxyo6O1FwlEcUed6goK2O4UrAwCAxW1oCz8rwHwGwa6EymUhw&__csr=gjNQ5st9fdf4lhuRWtV5RkHZEFikFZ6mLOBl9dXp5mKWQ_zHVre9UObBRjh94rVlzVbVZ6rVEx5DeUFrhkqha9pQ7oyvhUJaUCAq5u9xeqi4oSaBhqyQiKmmdGhaucyV8KimV5WxaFV9aiud9BAGbzubUhwxx7w050KwSgdUevw4Ow9-0gfG1Zg3uwcu1dqx60A8do088ywgo3lw21o1Iq7y40M82ECwJV94A4omwVxj8f8QtgyU984h0so4l9a4kcpt0fat0ZK4Hbg2IwiVEy0T86i1dwe0EcU3Iw0vrE0w60aSwaS&__comet_req=7&fb_dtsg=NAcPE5P376vP7voyLuKUylcrSHBqeRehbxIk7xcjq16j7x4cvhPwzfw%3A17865145036029998%3A1733329336&jazoest=26529&lsd=Xi5aIUfJvRygXj_PyYC4BD&__spin_r=1018609262&__spin_b=trunk&__spin_t=1733329347&fb_api_caller_class=RelayModern&fb_api_req_friendly_name=PolarisProfilePageContentQuery&variables=%7B%22id%22%3A%2219813483362%22%2C%22render_surface%22%3A%22PROFILE%22%7D&server_timestamps=true&doc_id=9539110062771438\",\"follower_count\":\"570\",\"username\":\"arjun_mundamani\"},\"responseMatches\":[{\"invert\":false,\"type\":\"contains\",\"value\":\"\\\"follower_count\\\":{{follower_count}}\"},{\"invert\":false,\"type\":\"contains\",\"value\":\"\\\"username\\\":\\\"{{username}}\\\"\"}],\"responseRedactions\":[{\"jsonPath\":\"$.data.user.follower_count\",\"regex\":\"\\\"follower_count\\\":(.*)\",\"xPath\":\"\"},{\"jsonPath\":\"$.data.user.username\",\"regex\":\"\\\"username\\\":\\\"(.*)\\\"\",\"xPath\":\"\"}],\"url\":\"https://www.instagram.com/graphql/query\"}",
+    "owner": "0xc53c51528989bf7154b6dde59662fe42bdfb4bec",
+    "timestampS": 1733329367,
+    "context": "{\"contextAddress\":\"0x0\",\"contextMessage\":\"sample context\",\"extractedParameters\":{\"REQ_BODY_GRD\":\"av=17841419780876685&__d=www&__user=0&__a=1&__req=r&__hs=20061.HYP%3Ainstagram_web_pkg.2.1..0.1&dpr=3&__ccg=GOOD&__rev=1018609262&__s=2hhzmm%3Aq5wrt9%3A3wblce&__hsi=7444592858818156004&__dyn=7xeUjG1mxu1syUbFp41twpUnwgU7SbzEdF8aUco2qwJxS0k24o1DU2_CwjE1EE2Cw8G11wBz81s8hwGxu786a3a1YwBgao6C0Mo2iyo7u3ifK0EUjwGzEaE2iwNwmE2eUlwhEe87q0nK3qazo7u3C2u2J0bS1LwTwKG1pg2fwxyo6O1FwlEcUed6goK2O4UrAwCAxW1oCz8rwHwGwa6EymUhw&__csr=gjNQ5st9fdf4lhuRWtV5RkHZEFikFZ6mLOBl9dXp5mKWQ_zHVre9UObBRjh94rVlzVbVZ6rVEx5DeUFrhkqha9pQ7oyvhUJaUCAq5u9xeqi4oSaBhqyQiKmmdGhaucyV8KimV5WxaFV9aiud9BAGbzubUhwxx7w050KwSgdUevw4Ow9-0gfG1Zg3uwcu1dqx60A8do088ywgo3lw21o1Iq7y40M82ECwJV94A4omwVxj8f8QtgyU984h0so4l9a4kcpt0fat0ZK4Hbg2IwiVEy0T86i1dwe0EcU3Iw0vrE0w60aSwaS&__comet_req=7&fb_dtsg=NAcPE5P376vP7voyLuKUylcrSHBqeRehbxIk7xcjq16j7x4cvhPwzfw%3A17865145036029998%3A1733329336&jazoest=26529&lsd=Xi5aIUfJvRygXj_PyYC4BD&__spin_r=1018609262&__spin_b=trunk&__spin_t=1733329347&fb_api_caller_class=RelayModern&fb_api_req_friendly_name=PolarisProfilePageContentQuery&variables=%7B%22id%22%3A%2219813483362%22%2C%22render_surface%22%3A%22PROFILE%22%7D&server_timestamps=true&doc_id=9539110062771438\",\"follower_count\":\"570\",\"username\":\"arjun_mundamani\"},\"providerHash\":\"0x9d8d8cf23921b38842ea3347fbb96f5588d2ef08f355a301777e97062793a838\"}",
+    "identifier": "0xe125afe9135f80b00071509fa26e52314e6a84ae5cb40c0f2d563e7d840daa85",
+    "epoch": 1
+  },
+  "signatures": [
+    "0x9f20f0a48330f4111c2e64eb99667689c52ff61ef6430bfe813f3fbcac70b8d67a6d013d122d1e828ee4223c852a7f7e20fbf6843093fa5c206aa40f187a85be1b"
+  ],
+  "witnesses": [
+    {
+      "id": "0x244897572368eadf65bfbc5aec98d8e5443a9072",
+      "url": "wss://witness.reclaimprotocol.org/ws"
+    }
+  ],
+  "publicData": {}
+}

@@ -11,7 +11,9 @@ import { Header } from "./Header/Header";
 
 const Credo = () => {
   const wallet = useTonWallet();
+
   // const wallet = true;
+
 
   return (
     <div>
@@ -25,7 +27,7 @@ const Credo = () => {
                 <RiVerifiedBadgeFill className="text-4xl" />
                 <span>Wallet Connected</span>
               </h2>
-              
+
               <div className="mt-8">
                 <ReclaimDemo onProofReceived={(proof) => console.log(proof)} />
               </div>

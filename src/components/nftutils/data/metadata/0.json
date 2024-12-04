@@ -1,0 +1,11 @@
+{
+  "name": "CREDO ID",
+  "description": "gm, share it with you frens",
+  "image": "ipfs://QmTPSH7bkExWcrdXXwQvhN72zDXK9pZzH3AGbCw13f6Lwx/0.jpg",
+  "attributes": [
+    { "trait_type": "Awesomeness", "value": "Super cool" },
+    { "trait_type": "Twitter/X", "value": "https://x.com/4rjunc" },
+    { "trait_type": "Github", "value": "https://github.com/4rjunc" },
+    { "trait_type": "Instagram", "value": "https://instagram.com/4rjunc" }
+  ]
+}
