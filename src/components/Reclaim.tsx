@@ -31,17 +31,17 @@ const getAPPID = (social: string) => {
   const ids = {
     instagram: "a7dcfc29-25a6-44ca-8e7b-a3099044bc63",
     x: "2523321f-f61d-4db3-b4e6-e665af5efdc1",
-    // youtube: "5a939797-afe0-4ad9-8dc4-6db967841a2c",
+    youtube: "5a939797-afe0-4ad9-8dc4-6db967841a2c",
     github: "6d3f6753-7ee6-49ee-a545-62f1b1822ae5",
-    // linkedin: "a9f1063c-06b7-476a-8410-9ff6e427e637",
-    // upwork: "f0912203-36b3-4cf4-b78d-30853245f6b9",
-    // spotify: "31d6ad77-b726-4726-a5b3-330e16482ab6",
+    linkedin: "a9f1063c-06b7-476a-8410-9ff6e427e637",
+    upwork: "f0912203-36b3-4cf4-b78d-30853245f6b9",
+    spotify: "31d6ad77-b726-4726-a5b3-330e16482ab6",
   };
   return ids[social as keyof typeof ids] || null;
 };
 
 function ReclaimDemo({ onProofReceived }: SocialMedia) {
-  const [social, setSocial] = useState<string>("X");
+  const [social, setSocial] = useState<string>("instagram");
   const [requestUrl, setRequestUrl] = useState<string | null>(null);
   const [proofs, setProofs] = useState(null);
   const [status, setStatus] = useState("");
@@ -62,7 +62,6 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
   };
 
   const setup = async () => {
-    console.log("setup");
     try {
       setIsLoading(true);
       const PROVIDER_ID = getAPPID(social);
@@ -73,14 +72,11 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       }
 
       setStatus("Initializing verification...");
-      console.log("verfication init", APP_ID, APP_SECRET);
       const reclaimProofRequest = await ReclaimProofRequest.init(
         APP_ID,
         APP_SECRET,
         PROVIDER_ID,
       );
-
-      console.log("verification inited!");
       const url = await reclaimProofRequest.getRequestUrl();
       setRequestUrl(url);
       setStatus("Ready for verification");
@@ -136,17 +132,18 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
   }, [proofs, profileLink]);
 
   return (
-    <div className="max-w-2xl  p-6 bg-white border border-gray-200 rounded-lg shadow mx-auto">
+    <div className="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <div className="text-center mt-8">
-          <h5 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 tracking-wider mb-6 shadow-md">
+        <div>
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900">
             Social Verification
           </h5>
+          <p className="text-sm text-gray-600">Verify social media accounts</p>
         </div>
       </div>
       {/* Profile Link Input */}
-      {/* <div className="mb-6">
+      <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Enter Profile Link
         </label>
@@ -154,36 +151,45 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
           type="text"
           value={profileLink}
           onChange={handleProfileLinkChange}
-          placeholder="Ex: https://instagram.com/username"
+          placeholder="https://instagram.com/username"
           className="w-full p-3 border border-gray-200 rounded-lg bg-white text-sm font-mono text-gray-900"
         />
-      </div> */}
+      </div>
       {/* Platform Selector - Updated */}
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Select Platform to Verify
         </label>
         <div className="relative">
-          {/* Icon */}
-          <div className="mt-8">
-            <div className="mb-6 flex justify-center gap-8">
-              <div className="cursor-pointer">
-                <FaInstagram className="w-10 h-10 text-gray-600" />
-              </div>
-              <div className="cursor-pointer">
-                <FaXTwitter className="w-10 h-10 text-gray-600" />
-              </div>
-              <div className="cursor-pointer">
-                <FaGithub className="w-10 h-10 text-gray-600" />
-              </div>
-            </div>
+          {/* Dropdown Icon */}
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+            <svg
+              className="w-4 h-4 text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </div>
+
           {/* Current Selected Icon */}
-          {/* <div className="absolute left-10 top-1/2 -translate-y-1/2 flex items-center gap-2">
+          <div className="absolute left-10 top-1/2 -translate-y-1/2 flex items-center gap-2">
             {social === "instagram" && (
               <>
                 <FaInstagram className="w-6 h-6 text-gray-600" />
                 <span className="text-gray-700">Instagram</span>
+              </>
+            )}
+            {social === "upwork" && (
+              <>
+                <FaSquareUpwork className="w-6 h-6 text-gray-600" />
+                <span className="text-gray-700">Upwork</span>
               </>
             )}
             {social === "github" && (
@@ -192,13 +198,28 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
                 <span className="text-gray-700">Github</span>
               </>
             )}
+            {social === "linkedin" && (
+              <>
+                <FaLinkedin className="w-6 h-6 text-gray-600" />
+                <span className="text-gray-700">Linkedin</span>
+              </>
+            )}
             {social === "x" && (
               <>
                 <FaXTwitter className="w-6 h-6 text-gray-900" />
                 <span className="text-gray-700">Twitter</span>
               </>
             )}
-          </div> */}
+            {social === "youtube" && (
+              <>
+                <FaYoutube className="w-6 h-6 text-gray-600" />
+                <span className="text-gray-700">Youtube</span>
+              </>
+            )}
+            {social === "spotify" && (
+              <Music className="w-6 h-6 text-green-600" />
+            )}
+          </div>
 
           <select
             value={social}
@@ -206,13 +227,31 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
             className="w-full pl-12 pr-10 py-3 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer hover:border-blue-500 transition-colors"
           >
             <option value="github">Github</option>
+            <option value="linkedin">Linkedin</option>
+            <option value="upwork">Upwork</option>
             <option value="instagram">Instagram</option>
-            <option value="x">Twitter(X)</option>
+            <option value="x">Twitter (X)</option>
+            <option value="youtube">YouTube</option>
           </select>
         </div>
       </div>{" "}
+      {/* Status Indicator */}
+      <div className="flex items-center gap-2 mb-6">
+        <div
+          className={`h-2 w-2 rounded-full ${proofs ? "bg-green-500" : "bg-gray-300"}`}
+        />
+        <span
+          className={`text-sm font-medium ${proofs
+              ? "text-green-600"
+              : status.includes("failed")
+                ? "text-red-600"
+                : "text-blue-600"
+            }`}
+        >
+          {status || "Ready to verify"}
+        </span>
+      </div>
       {/* Generate Button */}
-      <h2>{status}</h2>
       <button
         onClick={setup}
         disabled={isLoading}
