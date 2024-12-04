@@ -14,7 +14,6 @@ import {
 } from "react-icons/fa";
 import { FaSquareUpwork } from "react-icons/fa6";
 
-
 interface SocialMedia {
   onProofReceived: (proof: any) => void;
 }
@@ -63,7 +62,7 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
   };
 
   const setup = async () => {
-    console.log("setup")
+    console.log("setup");
     try {
       setIsLoading(true);
       const PROVIDER_ID = getAPPID(social);
@@ -74,12 +73,14 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       }
 
       setStatus("Initializing verification...");
-      console.log("verfication init", APP_ID, APP_SECRET)
+      console.log("verfication init", APP_ID, APP_SECRET);
       const reclaimProofRequest = await ReclaimProofRequest.init(
         APP_ID,
         APP_SECRET,
         PROVIDER_ID,
       );
+
+      console.log("verification inited!");
       const url = await reclaimProofRequest.getRequestUrl();
       setRequestUrl(url);
       setStatus("Ready for verification");
@@ -139,12 +140,11 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="text-center mt-8">
-        <h5 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 tracking-wider mb-6 shadow-md">
+          <h5 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 tracking-wider mb-6 shadow-md">
             Social Verification
-        </h5>
+          </h5>
+        </div>
       </div>
-
-    </div>
       {/* Profile Link Input */}
       {/* <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -167,13 +167,13 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
           {/* Icon */}
           <div className="mt-8">
             <div className="mb-6 flex justify-center gap-8">
-              <div  className="cursor-pointer">
+              <div className="cursor-pointer">
                 <FaInstagram className="w-10 h-10 text-gray-600" />
               </div>
-              <div  className="cursor-pointer">
+              <div className="cursor-pointer">
                 <FaXTwitter className="w-10 h-10 text-gray-600" />
               </div>
-              <div  className="cursor-pointer">
+              <div className="cursor-pointer">
                 <FaGithub className="w-10 h-10 text-gray-600" />
               </div>
             </div>
@@ -212,6 +212,7 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
         </div>
       </div>{" "}
       {/* Generate Button */}
+      <h2>{status}</h2>
       <button
         onClick={setup}
         disabled={isLoading}
