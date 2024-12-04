@@ -62,7 +62,6 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
   };
 
   const setup = async () => {
-    console.log("setup");
     try {
       setIsLoading(true);
       const PROVIDER_ID = getAPPID(social);
@@ -73,14 +72,11 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       }
 
       setStatus("Initializing verification...");
-      console.log("verfication init", APP_ID, APP_SECRET);
       const reclaimProofRequest = await ReclaimProofRequest.init(
         APP_ID,
         APP_SECRET,
         PROVIDER_ID,
       );
-
-      console.log("verification inited!");
       const url = await reclaimProofRequest.getRequestUrl();
       setRequestUrl(url);
       setStatus("Ready for verification");
@@ -140,23 +136,24 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       {/* Header */}
       <div className="flex items-center justify-center mb-6">
         <div className="text-center mt-8">
-          <h5 style={{
-            fontSize: "1.5rem", 
-            fontWeight: "700", 
-            color: "transparent", 
-            background: "linear-gradient(to right, #3b82f6, #2563eb, #1d4ed8)", 
-            WebkitBackgroundClip: "text", 
-            display: "inline-block", 
-            letterSpacing: "0.1em", 
-            textAlign: "center",
-            marginBottom: "16px",
-          }}>
+          <h5
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "700",
+              color: "transparent",
+              background:
+                "linear-gradient(to right, #3b82f6, #2563eb, #1d4ed8)",
+              WebkitBackgroundClip: "text",
+              display: "inline-block",
+              letterSpacing: "0.1em",
+              textAlign: "center",
+              marginBottom: "16px",
+            }}
+          >
             Create Your Credo ID
           </h5>
         </div>
       </div>
-
-
       {/* Profile Link Input */}
       {/* <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -229,8 +226,8 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
         onClick={setup}
         disabled={isLoading}
         className={`w-full inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white rounded-lg transition-colors ${isLoading
-            ? "bg-gray-400 cursor-not-allowed"
-            : "bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
+          ? "bg-gray-400 cursor-not-allowed"
+          : "bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
           }`}
       >
         {isLoading ? (
@@ -239,6 +236,8 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
           "Generate Verification Link"
         )}
       </button>
+
+
       {/* Verification URL */}
       {requestUrl && (
         <div className="mt-6 p-4 bg-gray-50 rounded-lg">
@@ -264,37 +263,67 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
             value={requestUrl}
             className="w-full p-3 border border-gray-200 rounded-lg bg-white text-sm font-mono text-gray-900"
           />
-
-          {/* Share Buttons */}
-          <div className="mt-4">
-            <a 
-              href={requestUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center block"
-            >
-              Open URL
-            </a>
-          </div>
-
-
         </div>
       )}
-      {/* Success State */}
-      {verified && (
-        <div className="mt-6 flex items-center gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
-          <CheckCircle className="w-6 h-6 text-green-600" />
-          <div>
-            <h3 className="font-medium text-green-900">
-              Verification Complete
-            </h3>
-            <p className="text-sm text-green-700">
-              Social media account verified successfully
-            </p>
-          </div>
+
+
+      <div className="mt-4">
+        {/* Share Link Title */}
+        <span className="text-sm font-medium text-gray-600 mb-2 block">
+          Share Link On
+        </span>
+
+        <div className="flex items-center w-full" style={{ gap: "10px" }}>
+          {/* WhatsApp Share Button */}
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(
+              `Verify your social media account using this link: ${requestUrl}`,
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 transition-colors"
+            style={{ padding: "3px 6px" }}
+          >
+            <FaWhatsapp className="mr-2" />
+            WhatsApp
+          </a>
+
+          {/* Telegram Share Button */}
+          <a
+            href={`https://t.me/share/url?url=${encodeURIComponent(requestUrl)}&text=${encodeURIComponent(
+              "Verify your social media account using this link!",
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium  bg-blue-500 rounded-lg hover:bg-blue-600 transition-colors"
+            style={{ padding: "3px 6px" }}
+          >
+            <FaTelegram className="mr-2" />
+            Telegram
+          </a>
         </div>
-      )}
+      </div>
     </div>
+  )
+}
+
+{/* Success State */ }
+{
+  verified && (
+    <div className="mt-6 flex items-center gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
+      <CheckCircle className="w-6 h-6 text-green-600" />
+      <div>
+        <h3 className="font-medium text-green-900">
+          Verification Complete
+        </h3>
+        <p className="text-sm text-green-700">
+          Social media account verified successfully
+        </p>
+      </div>
+    </div>
+  )
+}
+    </div >
   );
 }
 
