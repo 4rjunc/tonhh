@@ -23,7 +23,7 @@ concurrency:
 #Allow repo secrets
 env:
   VITE_RECLAIM_APP_ID: ${{ secrets.VITE_RECLAIM_APP_ID }}
-  VITE_RECLAIM_APP_SECRET: ${{ secrets.VITE_RECLAIM_APP_SECRET }}
+  VITE_RECLAIM_APP_SECRET: ${{ secrets.VITE_RECLAIM_SECRET_ID }}
 
 jobs:
   # Single deploy job since we're just deploying
