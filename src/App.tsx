@@ -154,7 +154,6 @@ function App() {
       }}
     >
       <div className="app">
-        <Header />
         <Credo />
         {/*<TxForm />*/}
         {/*<TonProofDemo />*/}
