@@ -80,7 +80,23 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
         onSuccess: (proofs: any) => {
           setProofs(proofs);
           console.log("Verification Session Started");
+          const parameters = JSON.parse(proof.claimData.parameters);
           onProofReceived(proofs);
+          let username = "";
+          switch (social) {
+            case "instagram":
+              username = parameters.paramValues?.username;
+              break;
+            case "github":
+              username = parameters.paramValues?.username;
+              break;
+            case "x":
+              username = proofs?.data?.handle || "Unknown Twitter (X) User";
+              break;
+            default:
+              username = "Unknown User";
+          }
+          console.log("username:", username);
           setStatus("Verification successful!");
         },
         onFailure: (error: any) => {
