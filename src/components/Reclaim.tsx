@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ReclaimProofRequest } from "@reclaimprotocol/js-sdk";
 import { CheckCircle, Copy, Music, Loader2 } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import QRCode from "react-qr-code";
 import {
   FaInstagram,
   FaYoutube,
@@ -57,19 +58,17 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
     setStatus("");
   };
 
-  const handleProfileLinkChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setProfileLink(e.target.value);
-  };
-
   const setup = async () => {
     try {
       setIsLoading(true);
       const PROVIDER_ID = getAPPID(social);
+      console.log("setupcalled");
 
       if (!PROVIDER_ID) {
         setStatus("Invalid social media platform.");
         return;
       }
+      console.log("Initializing", APP_ID, APP_SECRET, PROVIDER_ID);
 
       setStatus("Initializing verification...");
       const reclaimProofRequest = await ReclaimProofRequest.init(
@@ -239,6 +238,9 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
       {/* Verification URL */}
       {requestUrl && (
         <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+          <div style={{ margin: "20px 0" }}>
+            <QRCode value={requestUrl} />
+          </div>
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-gray-600">
               Verification Link
