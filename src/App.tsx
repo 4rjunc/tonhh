@@ -10,7 +10,7 @@ function App() {
   // console.log("ENVS:", import.meta.env.VITE_TEST);
   return (
     <TonConnectUIProvider
-      manifestUrl="https://ton-connect.github.io/demo-dapp-with-wallet/tonconnect-manifest.json"
+      manifestUrl="https:/4rjunc.github.io/tonhh/tonconnect-manifest.json"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         includeWallets: [
