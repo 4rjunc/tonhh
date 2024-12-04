@@ -270,7 +270,7 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
               rel="noopener noreferrer"
               className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center block"
             >
-              Share URL
+              Open URL
             </a>
           </div>
 
