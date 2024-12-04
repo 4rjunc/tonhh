@@ -226,8 +226,8 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
         onClick={setup}
         disabled={isLoading}
         className={`w-full inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white rounded-lg transition-colors ${isLoading
-          ? "bg-gray-400 cursor-not-allowed"
-          : "bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
           }`}
       >
         {isLoading ? (
@@ -236,8 +236,6 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
           "Generate Verification Link"
         )}
       </button>
-
-
       {/* Verification URL */}
       {requestUrl && (
         <div className="mt-6 p-4 bg-gray-50 rounded-lg">
@@ -265,8 +263,6 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
           />
         </div>
       )}
-
-
       <div className="mt-4">
         {/* Share Link Title */}
         <span className="text-sm font-medium text-gray-600 mb-2 block">
@@ -304,26 +300,23 @@ function ReclaimDemo({ onProofReceived }: SocialMedia) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-{/* Success State */ }
+{
+  /* Success State */
+}
 {
   verified && (
     <div className="mt-6 flex items-center gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
       <CheckCircle className="w-6 h-6 text-green-600" />
       <div>
-        <h3 className="font-medium text-green-900">
-          Verification Complete
-        </h3>
+        <h3 className="font-medium text-green-900">Verification Complete</h3>
         <p className="text-sm text-green-700">
           Social media account verified successfully
         </p>
       </div>
     </div>
-  )
-}
-    </div >
   );
 }
 
