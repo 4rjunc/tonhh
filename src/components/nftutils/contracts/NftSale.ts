@@ -9,7 +9,7 @@ import {
   storeStateInit,
   toNano,
 } from "ton-core";
-import { OpenedWallet } from "utils";
+import { OpenedWallet } from "../utils";
 
 export type GetGemsSaleData = {
   isComplete: boolean;

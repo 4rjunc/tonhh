@@ -1,6 +1,6 @@
 import { TonClient } from "ton";
 import { Address, beginCell, Cell, internal, SendMode, toNano } from "ton-core";
-import { OpenedWallet } from "utils";
+import { OpenedWallet } from "../utils";
 import { NftCollection, mintParams } from "./NftCollection";
 
 export class NftItem {
@@ -12,7 +12,7 @@ export class NftItem {
 
   public async deploy(
     wallet: OpenedWallet,
-    params: mintParams
+    params: mintParams,
   ): Promise<number> {
     const seqno = await wallet.contract.getSeqno();
     await wallet.contract.sendTransfer({
@@ -32,7 +32,7 @@ export class NftItem {
 
   static async getAddressByIndex(
     collectionAddress: Address,
-    itemIndex: number
+    itemIndex: number,
   ): Promise<Address> {
     const client = new TonClient({
       endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC",
@@ -41,7 +41,7 @@ export class NftItem {
     const response = await client.runMethod(
       collectionAddress,
       "get_nft_address_by_index",
-      [{ type: "int", value: BigInt(itemIndex) }]
+      [{ type: "int", value: BigInt(itemIndex) }],
     );
     return response.stack.readAddress();
   }
@@ -49,7 +49,7 @@ export class NftItem {
   static async transfer(
     wallet: OpenedWallet,
     nftAddress: Address,
-    newOwner: Address
+    newOwner: Address,
   ): Promise<number> {
     const seqno = await wallet.contract.getSeqno();
 
@@ -84,7 +84,7 @@ export class NftItem {
     msgBody.storeAddress(params.responseTo || null);
     msgBody.storeBit(false); // no custom payload
     msgBody.storeCoins(params.forwardAmount || 0);
-    msgBody.storeBit(0); // no forward_payload 
+    msgBody.storeBit(0); // no forward_payload
 
     return msgBody.endCell();
   }

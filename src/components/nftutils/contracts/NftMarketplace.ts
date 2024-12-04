@@ -7,7 +7,7 @@ import {
   SendMode,
   StateInit,
 } from "ton-core";
-import { OpenedWallet } from "utils";
+import { OpenedWallet } from "../utils";
 
 export class NftMarketplace {
   public ownerAddress: Address;
@@ -53,7 +53,8 @@ export class NftMarketplace {
   }
 
   private createCodeCell(): Cell {
-    const NftMarketplaceCodeBoc = "te6cckEBBAEAbQABFP8A9KQT9LzyyAsBAgEgAgMAqtIyIccAkVvg0NMDAXGwkVvg+kDtRND6QDASxwXy4ZEB0x8BwAGOK/oAMAHU1DAh+QBwyMoHy//J0Hd0gBjIywXLAljPFlAE+gITy2vMzMlx+wCRW+IABPIwjvfM5w==";
-    return Cell.fromBase64(NftMarketplaceCodeBoc)
+    const NftMarketplaceCodeBoc =
+      "te6cckEBBAEAbQABFP8A9KQT9LzyyAsBAgEgAgMAqtIyIccAkVvg0NMDAXGwkVvg+kDtRND6QDASxwXy4ZEB0x8BwAGOK/oAMAHU1DAh+QBwyMoHy//J0Hd0gBjIywXLAljPFlAE+gITy2vMzMlx+wCRW+IABPIwjvfM5w==";
+    return Cell.fromBase64(NftMarketplaceCodeBoc);
   }
 }
