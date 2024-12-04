@@ -13,7 +13,7 @@ import { NftMarketplace } from "./contracts/NftMarketplace";
 
 dotenv.config();
 
-async function init() {
+async function init(proof: any) {
   const metadataFolderPath = "./data/metadata/";
   const imagesFolderPath = "./data/images/";
 
@@ -114,4 +114,4 @@ async function init() {
   await NftItem.transfer(wallet, nftToSaleAddress, nftSaleContract.address);
 }
 
-void init();
+export default void init(proof);
