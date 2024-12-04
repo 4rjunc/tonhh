@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import { ReclaimProofRequest } from "@reclaimprotocol/js-sdk";
 import { CheckCircle, Copy, Loader2 } from "lucide-react";

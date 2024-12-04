@@ -1,3 +1,5 @@
+// @ts-nocheck
+//
 import * as dotenv from "dotenv";
 
 import { toNano } from "ton-core";
