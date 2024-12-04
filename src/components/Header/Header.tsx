@@ -4,7 +4,7 @@ import "./header.scss";
 export const Header = () => {
   return (
     <header>
-      <span>Credo ✅</span>
+      <span>Credo 🤝</span>
       <TonConnectButton />
     </header>
   );
